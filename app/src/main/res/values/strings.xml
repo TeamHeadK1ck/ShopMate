@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">PurchaseList_Project</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="registration">Регистрация</string>
+    <string name="authorization">Вход</string>
+    <string name="setting_page_descript">open setting page</string>
+    <string name="email">Почта</string>
+    <string name="pass">Пароль</string>
+    <string name="repeat_pass">Повторите пароль</string>
+    <string name="empty_shopping_list_string">В данный момент у вас нет покупок!</string>
+</resources>

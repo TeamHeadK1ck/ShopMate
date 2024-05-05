@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/dark_brown"
+    android:layout_height="match_parent"
+    tools:context=".presentation.fragment.registration.RegistrationFragment">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/main_container_margin"
+        android:background="@color/grey"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/registrationTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:fontFamily="@font/kyivtypeserif_regular"
+            android:text="@string/registration"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/registrationUnderliningTitile"
+            android:layout_width="0dp"
+            android:layout_height="4dp"
+            android:layout_marginStart="-20dp"
+            android:layout_marginEnd="-20dp"
+            android:background="@color/dark_brown"
+            app:layout_constraintEnd_toEndOf="@+id/registrationTitle"
+            app:layout_constraintStart_toStartOf="@+id/registrationTitle"
+            app:layout_constraintTop_toBottomOf="@+id/registrationTitle" />
+
+        <TextView
+            android:id="@+id/emailRegistrationText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
+            android:fontFamily="@font/kyivtypeserif_regular"
+            android:text="@string/email"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/registrationUnderliningTitile" />
+
+        <EditText
+            android:id="@+id/enterEmailRegistrationView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="32dp"
+            android:background="@drawable/shape_edit_text_background"
+            android:ems="10"
+            android:inputType="textEmailAddress"
+            android:padding="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/emailRegistrationText"
+            app:layout_constraintTop_toBottomOf="@+id/emailRegistrationText"
+            tools:text="dubina_favorit@mail.ru" />
+
+        <TextView
+            android:id="@+id/pass_registration_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:fontFamily="@font/kyivtypeserif_regular"
+            android:text="@string/pass"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/emailRegistrationText"
+            app:layout_constraintTop_toBottomOf="@+id/enterEmailRegistrationView" />
+
+        <EditText
+            android:id="@+id/enterPassRegisterView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="32dp"
+            android:background="@drawable/shape_edit_text_background"
+            android:ems="10"
+            android:inputType="text|textVisiblePassword"
+            android:padding="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/pass_registration_text"
+            app:layout_constraintTop_toBottomOf="@+id/pass_registration_text"
+            tools:text="123" />
+
+        <TextView
+            android:id="@+id/pass_validation_registration_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:fontFamily="@font/kyivtypeserif_regular"
+            android:text="@string/repeat_pass"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/emailRegistrationText"
+            app:layout_constraintTop_toBottomOf="@+id/enterPassRegisterView" />
+
+        <EditText
+            android:id="@+id/enterPassRegisterValidateView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="32dp"
+            android:background="@drawable/shape_edit_text_background"
+            android:ems="10"
+            android:inputType="text|textVisiblePassword"
+            android:padding="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/pass_validation_registration_text"
+            app:layout_constraintTop_toBottomOf="@+id/pass_validation_registration_text"
+            tools:text="123" />
+
+        <ImageButton
+            android:id="@+id/validationRegistrationButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/shape_brown_circle"
+            android:padding="16dp"
+            android:src="@drawable/ic_arrow_right"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
