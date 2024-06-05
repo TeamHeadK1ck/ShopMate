@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/mainMenuFragment">
+
+    <fragment
+        android:id="@+id/mainMenuFragment"
+        android:name="com.example.purchaselist_project.presentation.fragment.mainMenu.MainMenuFragment"
+        android:label="fragment_main_menu"
+        tools:layout="@layout/fragment_main_menu" >
+        <action
+            android:id="@+id/action_mainMenuFragment_to_authorizationFragment"
+            app:destination="@id/authorizationFragment" />
+        <action
+            android:id="@+id/action_mainMenuFragment_to_registrationFragment"
+            app:destination="@id/registrationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registrationFragment"
+        android:name="com.example.purchaselist_project.presentation.fragment.registration.RegistrationFragment"
+        android:label="fragment_registration"
+        tools:layout="@layout/fragment_registration" >
+        <action
+            android:id="@+id/action_registrationFragment_to_shoppingListFragment"
+            app:popUpToInclusive="false"
+            app:popUpTo="@id/mainMenuFragment"
+            app:destination="@id/shoppingListFragment"/>
+    </fragment>
+    <fragment
+        android:id="@+id/authorizationFragment"
+        android:name="com.example.purchaselist_project.presentation.fragment.authorization.AuthorizationFragment"
+        android:label="fragment_authorization"
+        tools:layout="@layout/fragment_authorization" >
+        <action
+            android:id="@+id/action_authorizationFragment_to_shoppingListFragment"
+            app:popUpToInclusive="false"
+            app:popUpTo="@id/mainMenuFragment"
+            app:destination="@id/shoppingListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/shoppingListFragment"
+        android:name="com.example.purchaselist_project.presentation.fragment.shoppingList.ShoppingListFragment"
+        android:label="fragment_shopping_list"
+        tools:layout="@layout/fragment_shopping_list" >
+        <action
+            android:id="@+id/action_shoppingListFragment_to_selectedPurchaseFragment"
+            app:destination="@id/selectedPurchaseFragment" />
+        <argument
+            android:name="email"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_shoppingListFragment_to_settingFragment"
+            app:destination="@id/settingFragment" />
+        <action
+            android:id="@+id/action_shoppingListFragment_to_userCustomizeFragment"
+            app:destination="@id/userCustomizeFragment" />
+        <action
+            android:id="@+id/action_shoppingListFragment_to_createNewShoppingListDialog"
+            app:destination="@id/createNewShoppingListDialog" />
+    </fragment>
+    <fragment
+        android:id="@+id/selectedPurchaseFragment"
+        android:name="com.example.purchaselist_project.presentation.fragment.purchase.SelectedPurchaseFragment"
+        android:label="fragment_selected_purchase"
+        tools:layout="@layout/fragment_selected_purchase" >
+        <argument
+            android:name="checkId"
+            app:argType="long" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingFragment"
+        android:name="com.example.purchaselist_project.presentation.fragment.setting.SettingFragment"
+        android:label="fragment_setting"
+        tools:layout="@layout/fragment_setting" >
+        <action
+            android:id="@+id/action_settingFragment_to_settingLanguageFragment"
+            app:destination="@id/settingLanguageFragment" />
+        <action
+            android:id="@+id/action_settingFragment_to_settingNotifyFragment"
+            app:destination="@id/settingNotifyFragment" />
+        <action
+            android:id="@+id/action_settingFragment_to_settingThemeFragment"
+            app:destination="@id/settingThemeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingLanguageFragment"
+        android:name="com.example.purchaselist_project.presentation.fragment.setting.language.SettingLanguageFragment"
+        android:label="fragment_setting_language"
+        tools:layout="@layout/fragment_setting_language" />
+    <fragment
+        android:id="@+id/settingNotifyFragment"
+        android:name="com.example.purchaselist_project.presentation.fragment.setting.notify.SettingNotifyFragment"
+        android:label="fragment_setting_natofy"
+        tools:layout="@layout/fragment_setting_natofy" />
+    <fragment
+        android:id="@+id/settingThemeFragment"
+        android:name="com.example.purchaselist_project.presentation.fragment.setting.theme.SettingThemeFragment"
+        android:label="fragment_setting_theme"
+        tools:layout="@layout/fragment_setting_theme" />
+    <fragment
+        android:id="@+id/userCustomizeFragment"
+        android:name="com.example.purchaselist_project.presentation.fragment.user.UserCustomizeFragment"
+        android:label="fragment_user_customize"
+        tools:layout="@layout/fragment_user_customize" >
+        <argument
+            android:name="email"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_userCustomizeFragment_to_settingFragment"
+            app:destination="@id/settingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createNewShoppingListDialog"
+        android:name="com.example.purchaselist_project.presentation.fragment.shoppingList.utils.CreateNewShoppingListDialog"
+        android:label="CreateNewShoppingListDialog"
+        tools:layout="@layout/fragment_create_new_shopping_list_dialog">
+        <argument
+            android:name="email"
+            app:argType="string" />
+    </fragment>
+</navigation>
